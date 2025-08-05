@@ -1,0 +1,65 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__title {
+  margin: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 20px;
+  color: #000000;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  height: 16px;
+  width: 16px;
+  border: none;
+  color: #0000004d;
+  background: transparent;
+}
+
+.modal__content {
+  background-color: #fff;
+  position: relative;
+  padding: 28px 28px 36px;
+  max-width: 496px;
+  width: 100%;
+  max-height: 436px;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid #0000004d;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__input {
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+.modal__radio-buttons {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
