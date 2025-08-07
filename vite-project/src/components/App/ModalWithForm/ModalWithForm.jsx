@@ -24,8 +24,8 @@ function ModalWithForm() {
                     <input id="cold" type="radio" className="modal__radio-input" /> Cold
                 </label>
             </fieldset>
-            <button type="submit" className="modal__submit">Add garment</button>
         </form>
+        <button type="submit" className="modal__submit">Add garment</button>
         </div>
     </div>
   );
