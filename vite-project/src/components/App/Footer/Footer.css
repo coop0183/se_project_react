@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 141px 42px 24px 40px;
+  max-width: 1360px;
+  width: 100%;
+}
+
+.footer__text {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: medium;
+  line-height: 20px;
+  color: #000;
+}
+
+.footer__date {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: medium;
+  line-height: 20px;
+  color: #000;
+}
