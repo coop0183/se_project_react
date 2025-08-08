@@ -2,7 +2,7 @@ import "./Main.css";
 import WeatherCard from '../WeatherCard/WeatherCard.jsx';
 import ItemCard from '../ItemCard/ItemCard.jsx';
 import { defaultClothingItems } from '../../../utils/constants.js';
-function Main({weatherData}) {
+function Main({weatherData, handleCardClick}) {
     return <main>
         <WeatherCard />
         <section className="cards">
@@ -11,7 +11,7 @@ function Main({weatherData}) {
                 {defaultClothingItems.filter((item) => (
                     item.weather === weatherData.type
                 )).map((item) => (
-                    <ItemCard key={item._id || item.name} item={item} />
+                    <ItemCard key={item._id || item.name} item={item} onCardClick={handleCardClick} />
                 ))}
             </ul>
         </section>

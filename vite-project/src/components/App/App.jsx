@@ -28,7 +28,7 @@ function App() {
     <div className="page">
       <div className="page__content">
         <Header handleAddClick={handleAddClick}/>
-        <Main weatherData={weatherData}/>
+        <Main weatherData={weatherData} handleCardClick={handleCardClick}/>
       </div>
       <ModalWithForm buttonText="Add garment" title="New Garment" activeModal={activeModal} handleCloseModal={handleCloseModal}>
         <label htmlFor="name" className="modal__label">Name{""} <input type="text" className="modal__input" id="name" placeholder="Name" /></label>
@@ -46,7 +46,7 @@ function App() {
                 </label>
             </fieldset>
       </ModalWithForm> 
-      <ItemModal activeModal={activeModal} selectedCard={selectedCard} handleCloseModal={handleCloseModal} />
+      <ItemModal activeModal={activeModal} card={selectedCard} handleCloseModal={handleCloseModal} />
       <Footer />
     </div>
   )
