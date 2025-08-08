@@ -4,12 +4,20 @@ import Main from './Main/Main.jsx';
 import { useState } from 'react';
 import ModalWithForm from './ModalWithForm/ModalWithForm.jsx';
 import Footer from './Footer/Footer.jsx';
+import ItemModal from './ItemModal/ItemModal.jsx';
 
 function App() {
   const [weatherData, setWeatherData] = useState( {type: "hot"});
-  const [activeModal, setActiveModal] = useState("");
+  const [activeModal, setActiveModal] = useState("preview");
+  const [selectedCard, setSelectedCard] = useState({});
+
+  const handleCardClick = (card) => {
+    setActiveModal("preview");
+    setSelectedCard(card);
+  };
+
   const handleAddClick = () => {
-    setActiveModal(!activeModal);
+    setActiveModal("add garment");
   };
 
   const handleCloseModal = () => {
@@ -38,6 +46,7 @@ function App() {
                 </label>
             </fieldset>
       </ModalWithForm> 
+      <ItemModal activeModal={activeModal} selectedCard={selectedCard} handleCloseModal={handleCloseModal} />
       <Footer />
     </div>
   )
