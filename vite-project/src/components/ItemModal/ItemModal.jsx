@@ -1,5 +1,5 @@
 import './ItemModal.css';
-import closeIcon from '../../../assets/close-icon.png';
+import closeIcon from '../../assets/close-icon.png';
 
 function ItemModal({activeModal, handleCloseModal, card}) {
     return (

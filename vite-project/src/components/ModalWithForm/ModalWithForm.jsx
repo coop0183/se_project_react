@@ -1,5 +1,5 @@
 import './ModalWithForm.css';
-import closeIcon from '../../../assets/close-icon.png';
+import closeIcon from '../../assets/close-icon.png';
 
 function ModalWithForm({ children, buttonText, title, activeModal, handleCloseModal }) {
   return (
