@@ -35,7 +35,7 @@ function App() {
     if (!activeModal) return;
     const handleEscClose = (e) => {
       if (e.key === "Escape") {
-        closeActiveModal();
+        handleCloseModal();
       }
     };
 
@@ -64,7 +64,7 @@ function App() {
       <ModalWithForm
         buttonText="Add garment"
         title="New Garment"
-        activeModal={activeModal}
+        isOpen={activeModal === "add garment"}
         handleCloseModal={handleCloseModal}
       >
         <label htmlFor="name" className="modal__label">
@@ -123,7 +123,7 @@ function App() {
         </fieldset>
       </ModalWithForm>
       <ItemModal
-        activeModal={activeModal}
+        isOpen={activeModal === "preview"}
         card={selectedCard}
         handleCloseModal={handleCloseModal}
       />
