@@ -40,5 +40,11 @@ export default [
         files: ["*.js", "*.jsx"],
       },
     ],
+    extends: [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "prettier",
+    ],
   },
 ];
