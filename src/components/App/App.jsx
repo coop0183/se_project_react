@@ -32,7 +32,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (!activeModal) return;
+    if (activeModal) return;
     const handleEscClose = (e) => {
       if (e.key === "Escape") {
         handleCloseModal();
@@ -44,7 +44,7 @@ function App() {
     return () => {
       document.removeEventListener("keydown", handleEscClose);
     };
-  }, [activeModal]);
+  }, [activeModal, handleCloseModal]);
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
