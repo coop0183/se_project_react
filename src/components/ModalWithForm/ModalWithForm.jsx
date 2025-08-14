@@ -10,7 +10,7 @@ function ModalWithForm({
 }) {
   return (
     <div className={isOpen ? "modal modal_opened" : "modal"}>
-      <div className="modal__overlay"></div>
+      <div className="modal__overlay" onClick={handleOverlayClick}></div>
 
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>

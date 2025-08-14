@@ -5,7 +5,7 @@ function ItemModal({ isOpen, handleCloseModal, card }) {
   return (
     <>
       <div className={isOpen ? "modal modal_opened" : "modal"}>
-        <div className="modal__overlay"></div>
+        <div className="modal__overlay" onClick={handleOverlayClick}></div>
 
         <div className="modal__content modal__content_type_image">
           <button
