@@ -6,10 +6,10 @@ function ItemCard({ item, onCardClick }) {
   };
 
   return (
-    <li className="card" onClick={handleCardClick}>
+    <li className="card" onCardClick={handleCardClick}>
       <h2 className="card__title">{item.name}</h2>
       <img
-        onClick={handleCardClick}
+        onCardClick={handleCardClick}
         src={item.link}
         alt={item.name}
         className="card__image"

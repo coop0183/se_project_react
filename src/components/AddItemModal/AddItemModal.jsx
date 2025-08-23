@@ -1,8 +1,12 @@
-//import "./AddItemModal.css";
+import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import { useState } from "react";
 
-export default function AddItemModal({ isOpen, onClose }) {
+export default function AddItemModal({
+  isOpen,
+  onClose,
+  onAddItemModalSubmit,
+}) {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
@@ -19,7 +23,13 @@ export default function AddItemModal({ isOpen, onClose }) {
     setWeather(e.target.value);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onAddItemModalSubmit({ name, imageUrl, weather });
+    setName("");
+    setImageUrl("");
+    setWeather("");
+  };
 
   return (
     <ModalWithForm
@@ -30,6 +40,7 @@ export default function AddItemModal({ isOpen, onClose }) {
       onSubmit={handleSubmit}
     >
       <label htmlFor="name" className="modal__label">
+        Name{""}{" "}
         <input
           type="text"
           className="modal__input"
@@ -41,9 +52,9 @@ export default function AddItemModal({ isOpen, onClose }) {
           onChange={handleNameChange}
           value={name}
         />
-        Name{""}{" "}
       </label>
       <label htmlFor="imageUrl" className="modal__label">
+        Image{""}{" "}
         <input
           type="url"
           className="modal__input"
@@ -53,7 +64,6 @@ export default function AddItemModal({ isOpen, onClose }) {
           onChange={handleimageUrlChange}
           value={imageUrl}
         />
-        Image{""}{" "}
       </label>
       <fieldset className="modal__radio-buttons">
         <legend className="modal__legend">Select the weather type:</legend>

@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import "./ModalWithForm.css";
 import closeIcon from "../../assets/close-icon.png";
 
@@ -9,7 +10,10 @@ function ModalWithForm({
   onClose,
   onSubmit,
 }) {
-  return (
+  const modalRoot = document.getElementById("modal-root");
+  if (!modalRoot) return null;
+
+  return ReactDOM.createPortal(
     <div className={isOpen ? "modal modal_opened" : "modal"}>
       <div className="modal__overlay"></div>
 
@@ -18,14 +22,15 @@ function ModalWithForm({
         <button onClick={onClose} type="button" className="modal__close">
           <img src={closeIcon} alt="Close" className="modal__close-icon" />
         </button>
-        <form onSubmit={onSubmit} className="modal__form" noValidate>
+        <form onSubmit={onSubmit} className="modal__form">
           {children}
           <button type="submit" className="modal__submit">
             {buttonText}
           </button>
         </form>
       </div>
-    </div>
+    </div>,
+    modalRoot
   );
 }
 
