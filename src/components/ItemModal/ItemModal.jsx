@@ -1,18 +1,14 @@
 import "./ItemModal.css";
 import closeIcon from "../../assets/close-icon.png";
 
-function ItemModal({ isOpen, handleCloseModal, card }) {
+function ItemModal({ isOpen, onClose, card }) {
   return (
     <>
       <div className={isOpen ? "modal modal_opened" : "modal"}>
         <div className="modal__overlay"></div>
 
         <div className="modal__content modal__content_type_image">
-          <button
-            onClick={handleCloseModal}
-            type="button"
-            className="modal__close"
-          >
+          <button onClick={onClose} type="button" className="modal__close">
             <img src={closeIcon} alt="Close" className="modal__close-icon" />
           </button>
           <img

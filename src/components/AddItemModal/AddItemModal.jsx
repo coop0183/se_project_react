@@ -42,11 +42,11 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
         <input
           type="url"
           className="modal__input"
-          id="imageUrl"
+          id="link"
           placeholder="Image URL"
           required
           onChange={handleChange}
-          value={values.imageUrl}
+          value={values.link}
         />
       </label>
       <fieldset className="modal__radio-buttons">

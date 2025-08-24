@@ -83,19 +83,22 @@ function App() {
     >
       <div className="page">
         <div className="page__content">
-          <Header onClick={handleAddClick} weatherData={weatherData} />
+          <Header onAddClick={handleAddClick} weatherData={weatherData} />
           <Routes>
             <Route
               path="/"
               element={
                 <Main
                   weatherData={weatherData}
-                  onClick={handleCardClick}
+                  onCardClick={handleCardClick}
                   clothingItems={clothingItems}
                 />
               }
             />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile"
+              element={<Profile onCardClick={handleCardClick} />}
+            />
           </Routes>
         </div>
         <AddItemModal
