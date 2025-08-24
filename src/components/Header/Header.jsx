@@ -20,7 +20,7 @@ function Header({ handleAddClick, weatherData }) {
       <div className="header__menu-bar">
         <ToggleSwitch />
         <button
-          onAddClick={handleAddClick}
+          onClick={handleAddClick}
           type="button"
           className="header__add-clothes-btn"
         >

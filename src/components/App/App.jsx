@@ -6,6 +6,7 @@ import Main from "../Main/Main.jsx";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
+import Profile from "../Profile/Profile.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import { coordinates, APIkey } from "../../utils/constants.js";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
@@ -20,10 +21,10 @@ function App() {
     isDay: false,
   });
 
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -42,11 +43,13 @@ function App() {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
 
-  const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    setClothingItems((prevItems) => [
-      { name, link: imageUrl, weather },
-      ...prevItems,
-    ]);
+  const onAddItem = (inputValues) => {
+    const newItemData = {
+      name: inputValues.name,
+      imageUrl: inputValues.imageUrl,
+      weather: inputValues.weatherType,
+    };
+    setClothingItems([newItemData, ...clothingItems]);
     handleCloseModal();
   };
 
@@ -80,25 +83,25 @@ function App() {
     >
       <div className="page">
         <div className="page__content">
-          <Header onAddClick={handleAddClick} weatherData={weatherData} />
+          <Header onClick={handleAddClick} weatherData={weatherData} />
           <Routes>
             <Route
               path="/"
               element={
                 <Main
                   weatherData={weatherData}
-                  onCardClick={handleCardClick}
+                  onClick={handleCardClick}
                   clothingItems={clothingItems}
                 />
               }
             />
-            <Route path="/profile" element={<p>PROFILE</p>} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
         <AddItemModal
           isOpen={activeModal === "add garment"}
           onClose={handleCloseModal}
-          onAddItemModalSubmit={handleAddItemModalSubmit}
+          onAddItem={onAddItem}
         />
         <ItemModal
           isOpen={activeModal === "preview"}

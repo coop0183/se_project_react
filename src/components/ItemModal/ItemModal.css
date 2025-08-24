@@ -60,7 +60,6 @@
 .modal__caption {
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
-  font-style: bold;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
@@ -70,7 +69,6 @@
 .modal__weather {
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 700;
-  font-style: bold;
   font-size: 20px;
   line-height: 24px;
   color: #000000;
