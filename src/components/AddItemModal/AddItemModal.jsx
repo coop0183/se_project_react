@@ -29,6 +29,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
           type="text"
           className="modal__input"
           id="name"
+          name="name"
           placeholder="Name"
           required
           minLength="2"
@@ -42,7 +43,8 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
         <input
           type="url"
           className="modal__input"
-          id="link"
+          id="imageUrl"
+          name="imageUrl"
           placeholder="Image URL"
           required
           onChange={handleChange}

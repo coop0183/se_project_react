@@ -1,1 +1,147 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
 
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__title {
+  margin: 0;
+  padding: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 20px;
+  color: #000000;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  height: 16px;
+  width: 16px;
+  border: none;
+  color: #0000004d;
+  background: transparent;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+  color: #000000;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal__content {
+  background-color: #fff;
+  position: relative;
+  padding: 28px 28px 36px;
+  max-width: 496px;
+  width: 100%;
+  max-height: 436px;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid #0000004d;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__label {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 20px;
+  color: #000000;
+  padding: 24px 0 8px;
+}
+
+.modal__input {
+  display: block;
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #00000080;
+  padding: 8px 0 4px;
+}
+
+.modal__radio-buttons {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
+
+.modal__legend {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #000;
+  padding: 24px 0 12px;
+}
+
+.modal__label_type_radio {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #00000080;
+  padding: 0 0 8px;
+}
+
+.modal__label_type_radio:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.modal__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 124px;
+  height: 36px;
+  margin: 32px 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #fff;
+  background-color: #0000004d;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.modal__submit:hover {
+  cursor: pointer;
+  background-color: #00000080;
+}
