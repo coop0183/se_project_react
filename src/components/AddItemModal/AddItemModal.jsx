@@ -48,7 +48,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
           placeholder="Image URL"
           required
           onChange={handleChange}
-          value={values.link}
+          value={values.imageUrl}
         />
       </label>
       <fieldset className="modal__radio-buttons">
@@ -58,8 +58,8 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
             id="hot"
             type="radio"
             className="modal__radio-input"
-            name="weatherType"
-            value={values.weather}
+            name="weather"
+            value="hot"
             onChange={handleChange}
           />
           Hot{" "}
@@ -69,8 +69,8 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
             id="warm"
             type="radio"
             className="modal__radio-input"
-            name="weatherType"
-            value={values.weather}
+            name="weather"
+            value="warm"
             onChange={handleChange}
           />
           Warm{" "}
@@ -80,8 +80,8 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }) {
             id="cold"
             type="radio"
             className="modal__radio-input"
-            name="weatherType"
-            value={values.weather}
+            name="weather"
+            value="cold"
             onChange={handleChange}
           />
           Cold{" "}

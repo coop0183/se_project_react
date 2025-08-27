@@ -6,7 +6,11 @@ function ClothesSection({ onCardClick, clothingItems }) {
     <div className="clothes__section">
       <div className="clothes__section-header">
         <h2 className="clothes__section-title">Your items</h2>
-        <button className="clothes__section-btn" type="button">
+        <button
+          className="clothes__section-btn"
+          type="button"
+          onCardClick={onCardClick}
+        >
           + Add new
         </button>
       </div>

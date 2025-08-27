@@ -25,7 +25,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const [clothingItems, setClothingItems] = useState({});
+  const [clothingItems, setClothingItems] = useState([]);
   const [cardToDelete, setCardToDelete] = useState(null);
 
   const handleCardClick = (card) => {
@@ -49,7 +49,7 @@ function App() {
     addItem(item)
       .then((newItem) => {
         setClothingItems([...clothingItems, newItem]);
-        closeActiveModal();
+        handleCloseModal();
       })
       .catch((error) => {
         console.error("Error adding item:", error);
@@ -61,14 +61,14 @@ function App() {
     setCardToDelete(card);
   };
 
-  const handleCardDelete = () => {
+  const handleCardDelete = (card) => {
     deleteItem(cardToDelete._id)
       .then(() => {
         setClothingItems(
           clothingItems.filter((item) => item._id !== cardToDelete._id)
         );
-        closeActiveModal();
-        setCardToDelete(null);
+        handleCloseModal();
+        setCardToDelete(card);
       })
       .catch((error) => {
         console.error("Error deleting item:", error);
