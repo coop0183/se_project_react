@@ -1,17 +1,17 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
-import { useEffect, useState } from "react";
-import Footer from "../Footer/Footer.jsx";
-import ItemModal from "../ItemModal/ItemModal.jsx";
 import Profile from "../Profile/Profile.jsx";
+import ItemModal from "../ItemModal/ItemModal.jsx";
+import AddItemModal from "../AddItemModal/AddItemModal.jsx";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal.jsx";
+import Footer from "../Footer/Footer.jsx";
+import { getItems, addItem, deleteItem } from "../../utils/api.js";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import { coordinates, APIkey } from "../../utils/constants.js";
-import AddItemModal from "../AddItemModal/AddItemModal.jsx";
-import { getItems, addItem, deleteItem } from "../../utils/api.js";
-import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal.jsx";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -34,6 +34,10 @@ function App() {
   };
 
   const handleAddClick = () => {
+    setActiveModal("add garment");
+  };
+
+  const handleAddNewClick = () => {
     setActiveModal("add garment");
   };
 
@@ -61,14 +65,14 @@ function App() {
     setCardToDelete(card);
   };
 
-  const handleCardDelete = (card) => {
+  const handleCardDelete = () => {
     deleteItem(cardToDelete._id)
       .then(() => {
         setClothingItems(
           clothingItems.filter((item) => item._id !== cardToDelete._id)
         );
         handleCloseModal();
-        setCardToDelete(card);
+        setCardToDelete(null);
       })
       .catch((error) => {
         console.error("Error deleting item:", error);
@@ -96,13 +100,13 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.error);
+      .catch("Error fetching weather data");
 
     getItems()
       .then((data) => {
         setClothingItems(data);
       })
-      .catch(console.error);
+      .catch("Error fetching clothing items");
   }, []);
 
   return (
@@ -128,6 +132,7 @@ function App() {
               element={
                 <Profile
                   onCardClick={handleCardClick}
+                  onAddNewClick={handleAddNewClick}
                   clothingItems={clothingItems}
                 />
               }

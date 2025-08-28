@@ -9,7 +9,7 @@ function ClothesSection({ onCardClick, clothingItems }) {
         <button
           className="clothes__section-btn"
           type="button"
-          onCardClick={onCardClick}
+          onClick={onCardClick}
         >
           + Add new
         </button>

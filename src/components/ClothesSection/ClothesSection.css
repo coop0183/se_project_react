@@ -43,10 +43,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  max-width: 1015px;
-  width: 100%;
-  max-height: 676px;
-  height: 100%;
+  width: 325px;
+  height: 328px;
   gap: 20px;
   list-style-type: none;
   padding: 0;
