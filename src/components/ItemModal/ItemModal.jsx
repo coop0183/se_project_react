@@ -11,7 +11,6 @@ function ItemModal({ isOpen, onClose, card, onCardDelete }) {
           <img src={closeIcon} alt="Close" className="modal__close-icon" />
         </button>
         <div className="modal__image">
-          <h2 className="modal__caption">{card.name}</h2>
           <img
             src={card.imageUrl}
             alt={`Preview of ${card.name}`}
@@ -19,15 +18,16 @@ function ItemModal({ isOpen, onClose, card, onCardDelete }) {
           />
         </div>
         <div className="modal__info">
+          <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">weather: {card.weather}</p>
-          <button
-            className="modal__delete-btn"
-            type="button"
-            onClick={() => onCardDelete(card)}
-          >
-            Delete item
-          </button>
         </div>
+        <button
+          className="modal__delete-btn"
+          type="button"
+          onClick={() => onCardDelete(card)}
+        >
+          Delete item
+        </button>
       </div>
     </div>
   );

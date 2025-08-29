@@ -44,7 +44,6 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   width: 325px;
-  height: 328px;
   gap: 20px;
   list-style-type: none;
   padding: 0;

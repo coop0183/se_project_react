@@ -37,10 +37,6 @@ function App() {
     setActiveModal("add garment");
   };
 
-  const handleAddNewClick = () => {
-    setActiveModal("add garment");
-  };
-
   const handleCloseModal = () => {
     setActiveModal("");
   };
@@ -132,7 +128,7 @@ function App() {
               element={
                 <Profile
                   onCardClick={handleCardClick}
-                  onAddNewClick={handleAddNewClick}
+                  onAddClick={handleAddClick}
                   clothingItems={clothingItems}
                 />
               }
